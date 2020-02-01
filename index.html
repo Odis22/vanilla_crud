@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Crud</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="content">
+                <div class="reminder">
+                    <h2>TASKS</h2>
+                </div>
+                <div class="box">
+                    <table id="data_table">
+                        <thead>
+                            <tr>
+                                <th>Task</th>
+                                <th>Description</th>
+                                <th>Time</th>
+                                <th>Priority</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr id="row1">
+                                <td id="task_row1">Watch Tv</td>
+                                <td id="description_row1">Should watch tv at morning</td>
+                                <td id="time_row1">1 day</td>
+                                <td id="priority_row1">Low</td>
+                                <td>
+                                    <a
+                                        id="edit_button1"
+                                        class="button button_edit"
+                                        onclick="editTask('1')"
+                                    >
+                                        <i class="glyphicon glyphicon-pencil"></i>
+                                    </a>
+                                    <a
+                                        class="button button_delete"
+                                        id="delete_button1"
+                                        onclick="deleteTask('1')"
+                                    >
+                                        <i class="glyphicon glyphicon-trash"></i>
+                                    </a>
+                                    <a
+                                        id="save_button1"
+                                        class="button button_save"
+                                        onclick="saveTask('1')"
+                                    >
+                                        <i class="glyphicon glyphicon-save"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input
+                                        type="text"
+                                        id="new_task"
+                                        placeholder="Enter new task"
+                                        onkeyup="validateInput()"
+                                    >
+                                </td>
+                                <td>
+                                    <input
+                                        type="text"
+                                        id="new_description"
+                                        placeholder="Enter description"
+                                        onkeyup="validateInput()"
+                                    >
+                                </td>
+                                <td>
+                                    <select
+                                        onchange="validateInput()"
+                                        id="new_time"
+                                    >
+                                        <option
+                                            disabled
+                                            selected
+                                        >Choose time estimated</option>
+                                        <option value="1 day">1 day</option>
+                                        <option value="2 days">2 days</option>
+                                        <option value="3 days">3 days</option>
+                                        <option value="4 days">4 days</option>
+                                        <option value="5 days">5 days</option>
+                                        <option value="6 days">6 days</option>
+                                        <option value="1 week">1 week</option>
+                                        <option value="2 - 3 weeks">2 - 3 weeks</option>
+                                        <option value="1 - 6 months">1 - 6 months</option>
+                                        <option value="6 - 11 months">6 - 11 months</option>
+                                        <option value="1 year">1 year</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select
+                                        onchange="validateInput()"
+                                        id="new_priority"
+                                    >
+                                        <option
+                                            disabled
+                                            selected
+                                        >Choose priority</option>
+                                        <option value="Low">Low</option>
+                                        <option value="Medium">Medium</option>
+                                        <option value="High">High</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <a
+                                        id="add_item"
+                                        class="button button_add"
+                                        onclick="addTask();"
+                                    >
+                                        <i class="glyphicon glyphicon-plus"></i> Add
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
